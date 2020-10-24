@@ -7,6 +7,27 @@
   pointer-events: none;
 }
 
+header {
+  height: 20%;
+}
+
+.jumbotron {
+  background: url(https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 0;
+  height: 20%;
+  text-align: center;
+  color: white;
+}
+
+.jumbotron div {
+  margin-top: 15%;
+  margin-bottom: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
