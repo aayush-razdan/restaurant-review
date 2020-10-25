@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import Navbar from "./components/navbar.component";
-import RestaurantList from "./components/restaurantList.component";
+import CreateReview from "./components/create-review.component";
 
 function App() {
   return (
@@ -18,10 +18,10 @@ function App() {
           </h1>
           <p>By Quarantine Lovers</p>
           <p>
-            <Link to="/RestaurantList" className="btn btn-primary btn-md">
-              Add New Restaurant
+            <Link to="/CreateReview" className="btn btn-primary btn-md">
+              Add Review
             </Link>
-            <Route path="/RestaurantList" component={RestaurantList} exact />
+            <Route path="/CreateReview" component={CreateReview} exact />
           </p>
         </div>
       </header>
