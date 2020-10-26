@@ -1,2 +1,3 @@
 # create a .env folder in backend folder and add the api keys in that folder 
 .env
+node_modules
