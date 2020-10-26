@@ -1,30 +1,50 @@
 import React, { ReactDOM, Component } from "react";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import App from "../App.js"
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 export default class CreateUser extends Component {
-  render() {
-    return (
-      //<Router>
-      <nav className="navbar navbar bg-dark navbar-expand-lg">
-        <form>
-          <p>
-            <b>Your name: </b>
-            <input type="text"></input>
-          </p>
-          <p>{"\n"}</p>
-          <p>
-            <b>Username: </b>
-            <input type="text"></input>
-          </p>
-          <p>{"\n"}</p>
-          <p>
-            <b>Email id: </b>
-            <input type="text"></input>
-          </p>
-        </form>
-      </nav>
-      // </Router>
-    );
-  }
+    render() {
+        return (
+            //<Router>
+            <nav className="navbar navbar bg-dark navbar-expand-lg">
+                <form>
+                    <p>
+                        <b>Your name: </b>
+                        <input type="text"></input>
+                    </p>
+                    <p>{"\n"}</p>
+                    <p>
+                        <b>Username: </b>
+                        <input type="text"></input>
+                    </p>
+                    <p>{"\n"}</p>
+                    <p>
+                        <b>Email id: </b>
+                        <input type="text"></input>
+                    </p>
+                </form>
+                <Card>
+                    <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+                    <Card.Content>
+                        <Card.Header>Matthew</Card.Header>
+                        <Card.Meta>
+                            <span className='date'>Joined in 2015</span>
+                        </Card.Meta>
+                        <Card.Description>
+                            Matthew is a musician living in Nashville.
+                        </Card.Description>
+                    </Card.Content>
+                    <Card.Content extra>
+                        <a>
+                            <Icon name='user' />22 Friends
+                        </a>
+                    </Card.Content>
+                </Card>
+            </nav>
+            // </Router>
+        );
+    }
 }
