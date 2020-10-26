@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 # create a .env folder in backend folder and add the api keys in that folder 
 .env
 node_modules
+||||||| ea912db
+# create a .env folder in backend folder and add the api keys in that folder 
+.env
+=======
+node_modules
+.env
+>>>>>>> 762a8941553e968127e3ceb25ed81ac1683ce257
