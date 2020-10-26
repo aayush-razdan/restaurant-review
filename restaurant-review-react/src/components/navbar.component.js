@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import RestaurantList from "./restaurant-list.component"
-import CreateUser from "./create-user.component"
+import RestaurantList from "./restaurant-list.component";
+import CreateUser from "./create-user.component";
 
 export default class Navbar extends Component {
   render() {
@@ -28,7 +28,6 @@ export default class Navbar extends Component {
               <Link to="/CreateUser" className="nav-link">
                 Login
               </Link>
-              <Route path="/CreateUser" component={CreateUser} />
             </li>
           </ul>
         </div>
