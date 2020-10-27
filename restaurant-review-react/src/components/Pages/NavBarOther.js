@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-<<<<<<< HEAD:restaurant-review-react/src/components/Pages/NavBarOther.js
+
 import RestaurantList from "./RestaurantList"
 import CreateUser from "./CreateUser"
-=======
+
 import RestaurantList from "./restaurant-list.component";
-import CreateUser from "./create-user.component";
->>>>>>> 08afbf0bc004ffd105d465597f6cdd18a526e26d:restaurant-review-react/src/components/navbar.component.js
+
 
 export default class Navbar extends Component {
   render() {
