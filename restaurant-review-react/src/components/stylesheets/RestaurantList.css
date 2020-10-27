@@ -1,4 +1,4 @@
-body { 
+/* body { 
   background: #333; 
   text-align: center;
   min-height: 100%;
@@ -27,4 +27,9 @@ h1 { font-size: 20vw; }
       background-position: 200% center;
     }
   }
+} */
+
+#thumbdiv {
+  display: flex;
+  flex-direction: wrap;
 }

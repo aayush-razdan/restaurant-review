@@ -17,11 +17,13 @@ connection.once("open", () => {
 app.use(cors());
 app.use(express.json());
 
-const restaurantRouter = require("./routes/restaurants")
-const userRouter = require("./routes/users")
+const restaurantRouter = require("./routes/restaurants");
+const userRouter = require("./routes/users");
+const cityRouter = require("./routes/cities");
 
-app.use("/restaurant", restaurantRouter);
-app.use("/users", userRouter)
+app.use("/restaurants", restaurantRouter);
+app.use("/users", userRouter);
+app.use("/cities", cityRouter);
 
 app.listen(port, () => {
   console.log(`server is running on port: ${port}`);

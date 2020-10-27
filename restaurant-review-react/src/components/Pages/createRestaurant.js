@@ -1,5 +1,6 @@
 import React, { ReactDOM, Component } from "react";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default class CreateRestaurant extends Component {
@@ -10,6 +11,7 @@ export default class CreateRestaurant extends Component {
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeAddress = this.onChangeAddress.bind(this);
     this.onChangeCity = this.onChangeCity.bind(this);
+    this.onChangeContact = this.onChangeContact.bind(this);
     //this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
@@ -18,30 +20,25 @@ export default class CreateRestaurant extends Component {
       description: "",
       city: "",
       address: "",
-
-      //duration: 0,
-      //date: new Date(),
+      contact: "",
       cities: [],
     };
   }
 
   componentDidMount() {
-    // axios.get('http://localhost:5000/users/')
-    //   .then(response => {
-    //     if (response.data.length > 0) {
-    //       this.setState({
-    //         users: response.data.map(user => user.username),
-    //         username: response.data[0].username
-    //       })
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   })
-    this.setState({
-      cities: ["Delhi", "Mumbai"],
-      city: "Delhi",
-    });
+    axios
+      .get("http://localhost:5000/cities/")
+      .then((response) => {
+        if (response.data.length > 0) {
+          this.setState({
+            cities: response.data.map((city) => city.city),
+            city: response.data[0].city,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   onChangeResname(e) {
@@ -68,17 +65,11 @@ export default class CreateRestaurant extends Component {
     });
   }
 
-  //   onChangeDuration(e) {
-  //     this.setState({
-  //       duration: e.target.value
-  //     })
-  //   }
-
-  //   onChangeDate(date) {
-  //     this.setState({
-  //       date: date
-  //     })
-  //   }
+  onChangeContact(e) {
+    this.setState({
+      contact: e.target.value,
+    });
+  }
 
   onSubmit(e) {
     e.preventDefault();
@@ -88,12 +79,14 @@ export default class CreateRestaurant extends Component {
       description: this.state.description,
       address: this.state.address,
       city: this.state.city,
+      contact: this.state.contact,
     };
 
     console.log(restaurant);
 
-    // axios.post('http://localhost:5000/exercises/add', exercise)
-    //   .then(res => console.log(res.data));
+    axios
+      .post("http://localhost:5000/restaurants/add", restaurant)
+      .then((res) => console.log(res.data));
 
     window.location = "/";
   }
@@ -149,6 +142,16 @@ export default class CreateRestaurant extends Component {
               className="form-control"
               value={this.state.description}
               onChange={this.onChangeDescription}
+            />
+          </div>
+          <div className="form-group">
+            <label>Phone Number: </label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              value={this.state.contact}
+              onChange={this.onChangeContact}
             />
           </div>
 

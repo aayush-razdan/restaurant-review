@@ -7,6 +7,7 @@ import Navbar from "./components/nav";
 //import Navbar from "./components/NavBar";
 import Home from "./components/Pages/HomeComponent";
 import CreateRestaurant from "./components/Pages/createRestaurant";
+import RestaurantList from "./components/Pages/RestaurantList";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Route path="/" exact component={Home} />
       <Route path="/CreateRestaurant" component={CreateRestaurant} />
+      <Route path="/RestaurantList" component={RestaurantList} />
     </Router>
   );
 }

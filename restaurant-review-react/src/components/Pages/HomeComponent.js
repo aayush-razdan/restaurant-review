@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import axios from "axios";
+
 export default class Home extends Component {
   render() {
     return (
@@ -11,8 +13,8 @@ export default class Home extends Component {
           </h1>
           <p>By Quarantine Lovers</p>
           <p>
-            <Link to="/CreateReview" className="btn btn-primary btn-md">
-              Add Review
+            <Link to="/CreateRestaurant" className="btn btn-primary btn-md">
+              Add Restaurant
             </Link>
           </p>
         </div>
