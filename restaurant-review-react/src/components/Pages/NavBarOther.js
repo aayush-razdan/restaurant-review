@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import RestaurantList from "./restaurant-list.component"
-import CreateUser from "./create-user.component"
+import RestaurantList from "./RestaurantList"
+import CreateUser from "./CreateUser"
 
 export default class Navbar extends Component {
   render() {
@@ -36,3 +36,18 @@ export default class Navbar extends Component {
     );
   }
 }
+/*
+import React,{useState} from 'react'
+
+export default function navbarcomponent() {
+  return (
+    <>
+      <nav className="navbar">
+        <div className="navbar-container">
+        
+        </div>
+      </nav>
+    </>
+  )
+}
+*/
