@@ -109,13 +109,13 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
   background: #000;
-  height: 100px;
+  height:7.5em;
   display: flex;
   //justify-content: space-between;
  // padding: 0.5rem calc((100vw - 1000px) / 2);
   z-index: 10;
   /* Third Nav */
-  /* justify-content: flex-start; */
+ justify-content: space-between;
 `;
 
 export const NavLink = styled(Link)`
@@ -123,13 +123,15 @@ export const NavLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
- margin-left:10px;
+ //margin-left:10px;
   padding: 0 1rem;
   height: 100%;
   font-size:20px;
   cursor: pointer;
-  &.active {
-    color: #15cdfc;
+  &:focus, &:hover{
+    color: #FFC300;
+    text-decoration: none;
+
   }
 `;
 
@@ -150,7 +152,7 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-left:522px;
+  //margin-left:522px;
   /* Second Nav */
   /* margin-right: 24px; */
   /* Third Nav */
@@ -164,7 +166,7 @@ export const NavMenu = styled.div`
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
-  margin-right: 24px;
+  margin-right: 3%;
   /* Third Nav */
   /* justify-content: flex-end;
   width: 100vw; */
@@ -186,10 +188,12 @@ export const NavBtnLink = styled(Link)`
   text-decoration: none;
   /* Second Nav */
   margin-left: 24px;
-  &:hover {
+ &:hover,  &:active  {
     transition: all 0.2s ease-in-out;
     background: #fff;
     color: #010606;
+    text-decoration: none;
+
   }
 `;
 export const h1=styled.div`

@@ -13,12 +13,14 @@ export default class Home extends Component {
           </h1>
           <p>By Quarantine Lovers</p>
           <p>
+
             <Link to="/CreateRestaurant" className="btn btn-primary btn-md">
               Add Restaurant
             </Link>
           </p>
         </div>
       </header>
+      
     );
   }
 }
