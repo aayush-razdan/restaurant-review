@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import orderFood  from "./orderFood";
 import { Menu, Row, Col, Icon, Button, Popover, Badge } from 'antd';
 
 
@@ -52,19 +53,51 @@ export default class Header extends React.Component {
       </Button>,
       <Menu mode={menuMode} defaultSelectedKeys={['home']} id="nav" key="nav">
         <Menu.Item key="home">
+        <a
+            href="/home"
+            className="header-link"
+            // target="_blank"
+            rel="noopener noreferrer"
+            component={orderFood}
+          >
           HOME
+          </a>
         </Menu.Item>
         <Menu.Item key="docs/spec">
+        <a
+            href="/restaurants"
+            className="header-link"
+            // target="_blank"
+            rel="noopener noreferrer"
+            component={orderFood}
+          >
           RESTAURANTS
+          </a>
         </Menu.Item>
         <Menu.Item key="docs/react">
-         BLOG
+        <a
+            href="/blog"
+            className="header-link"
+            // target="_blank"
+            rel="noopener noreferrer"
+            component={orderFood}
+          >
+          BLOG
+          </a>
         </Menu.Item>
         <Menu.Item key="docs/pattern">
+          <a
+            href="/orderFood"
+            className="header-link"
+            // target="_blank"
+            rel="noopener noreferrer"
+            component={orderFood}
+          >
           ORDER FOOD
+          </a>
         </Menu.Item>
         {}
-        <Menu.Item key="pro">
+        {/* <Menu.Item key="pro">
           <a
             href=""
             className="header-link"
@@ -79,7 +112,7 @@ export default class Header extends React.Component {
               <Badge dot />
             </span>
           </a>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>,
     ];
 
