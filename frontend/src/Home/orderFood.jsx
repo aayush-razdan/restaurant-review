@@ -1,12 +1,10 @@
 import React from 'react';
 
-class orderFood extends React.Component {
-   render() {
+export default function orderFood(){
       return (
          <div>
             Hello World!!!
          </div>
       );
    }
-}
-export default orderFood;
+

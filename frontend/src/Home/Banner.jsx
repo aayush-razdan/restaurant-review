@@ -30,6 +30,7 @@ export default function Banner({ onEnterChange }) {
             <a>
               Get Started
             </a>
+            
             <a>
               Explore
             </a>

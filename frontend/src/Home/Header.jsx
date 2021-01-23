@@ -136,7 +136,7 @@ export default class Header extends React.Component {
           </Popover>
         ) : null}
         <Row>
-          <Col lg={4} md={5} sm={24} xs={24}>
+          <Col lg={4} md={4} sm={24} xs={24}>
             <a id="logo">
               <img alt="logo" src="https://cdn.dribbble.com/users/3306608/screenshots/9042257/media/1b9a44ea9f560143c0f665b39508d12d.jpg" />
               <span>Noobs</span>
