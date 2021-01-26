@@ -40,13 +40,14 @@ import {
   NavBtn,
   NavBtnLink
 } from './NavbarElements';
-
+import './styles.css';
 const Navbar = () => {
   return (
     <>
+     
       <Nav>
-        <NavLink to='/'>
-        <h2 style={{color:'white'}}>NOOB BAR</h2>
+      <NavLink to='/' className="logo">
+        <h2 style={{color:'white'}}>NOOBS</h2>
         </NavLink>
         <Bars />
         <NavMenu>

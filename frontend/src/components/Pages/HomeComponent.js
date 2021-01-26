@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Button from '@material-ui/core/Button';
 
-import axios from "axios";
+import './styles.css';
 
 export default class Home extends Component {
   render() {
@@ -11,14 +12,19 @@ export default class Home extends Component {
           <h1>
             <span className="glyphicon glyphicon-tent"></span> Welcome To Review
           </h1>
+          
           <p>By Quarantine Lovers</p>
           <p>
 
-            <Link to="/CreateRestaurant" className="btn btn-primary btn-md">
-              Add Restaurant
+            <Link to="/CreateRestaurant">
+            <Button variant="contained" color="primary" size="14%">
+Add Restaurant
+</Button>
+             
             </Link>
           </p>
         </div>
+        
       </header>
       
     );
