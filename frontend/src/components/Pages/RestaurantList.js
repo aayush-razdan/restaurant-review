@@ -2,7 +2,7 @@ import React, { ReactDOM, Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "../Home/static/RestaurantList.css";
+import "../stylesheets/RestaurantList.css";
 
 const Restaurant = (props) => {
   return (

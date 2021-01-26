@@ -1,51 +1,23 @@
 {
-  "name": "react-navbar-v3",
+  "name": "restaurant-review-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "antd": "^3.0.0",
-    "axios": "^0.21.1",
-    "classnames": "^2.2.5",
-    "enquire-js": "^0.1.0",
-    "prop-types": "^15.6.0",
-    "rc-queue-anim": "^1.4.0",
-    "rc-scroll-anim": "^2.1.0",
-    "rc-tween-one": "^1.5.5",
-    "react": "^16.1.1",
-    "react-document-title": "^2.0.3",
-    "react-dom": "^16.1.1",
-    "react-github-button": "^0.1.11",
-    "react-router-dom": "^5.2.0"
-  },
-  "devDependencies": {
-    "atool-build": "^1.0.2",
-    "atool-test-mocha": "^0.1.7",
-    "babel-eslint": "^8.0.2",
-    "babel-plugin-import": "^1.6.2",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-runtime": "^6.26.0",
-    "dora": "^0.4.5",
-    "dora-plugin-webpack": "^1.0.0",
-    "eslint": "^4.11.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.5.1",
-    "expect": "^21.2.1",
-    "gh-pages": "^1.1.0",
-    "pre-commit": "^1.2.2",
-    "redbox-react": "^1.5.0"
-=======
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.0",
+    "bootstrap": "^3.4.1",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
-    "react-scripts": "3.4.3",
-    "styled-components": "^5.2.0"
->>>>>>> 366cbd76ead9d531c5048f3cb5902fb1ec4a239c
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.0",
+    "react-scroll": "^1.8.1",
+    "semantic-ui-react": "^2.0.0",
+    "styled-components": "^5.2.0",
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -54,7 +26,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
