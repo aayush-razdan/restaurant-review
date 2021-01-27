@@ -4,49 +4,47 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../stylesheets/RestaurantList.css";
 // import { Card } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import { red, blue } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Collapse from "@material-ui/core/Collapse";
+import Avatar from "@material-ui/core/Avatar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import { red, blue } from "@material-ui/core/colors";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShareIcon from "@material-ui/icons/Share";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     // maxWidth: 345,
     width: 200,
-    backgroundColor: blue[100]
+    backgroundColor: blue[100],
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: "56.25%", // 16:9
   },
   expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
   },
   expandOpen: {
-    transform: 'rotate(180deg)',
+    transform: "rotate(180deg)",
   },
   avatar: {
     backgroundColor: red[500],
   },
 }));
-
 
 const Restaurant = (props) => {
   const classes = useStyles();
@@ -67,7 +65,7 @@ const Restaurant = (props) => {
             avatar={
               <Avatar aria-label="recipe" className={classes.avatar}>
                 R
-          </Avatar>
+              </Avatar>
             }
             action={
               <IconButton aria-label="settings">
@@ -75,11 +73,7 @@ const Restaurant = (props) => {
               </IconButton>
             }
           />
-          <CardMedia
-            className={classes.media}
-            image=""
-            title="Restaurant"
-          />
+          <CardMedia className={classes.media} image="" title="Restaurant" />
           {/* <Link
             to={"/view/" + props.restaurant._id}
             className="btn btn-primary"
@@ -120,6 +114,7 @@ export default class RestaurantList extends Component {
       city: "",
       cities: [],
       restaurants: [],
+      restaurants1: [],
     };
   }
 
@@ -141,7 +136,7 @@ export default class RestaurantList extends Component {
     axios
       .get("http://localhost:5000/restaurants/")
       .then((response) => {
-        this.setState({ restaurants: response.data });
+        this.setState({ restaurants1: response.data });
         console.log(response.data);
       })
       .catch((error) => {
@@ -170,7 +165,7 @@ export default class RestaurantList extends Component {
     const selcity = this.state.city;
 
     this.setState({
-      restaurants: this.state.restaurants.filter((rt) => rt.city == selcity),
+      restaurants: this.state.restaurants1.filter((rt) => rt.city == selcity),
     });
   }
 
