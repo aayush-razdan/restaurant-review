@@ -1,36 +1,3 @@
-/*import React from 'react';
-import {
-  Nav,
-  NavbarContainer,
-NavLogo,MpbileIcon,NavMenu,NavItem,NavLinks,NavBtnLink,NavBtn
-} from './NavbarElements';
-import { FaBars } from 'react-icons/fa';
-const Navbar = () => {
-  return (
-    <>
-      <Nav>
-       <NavbarContainer>
-         <NavLogo to='/'>QL</NavLogo>
-        
-         
-         <NavMenu>
-           <NavItem>
-             <NavLinks to="../Pages/createReview">Create Review</NavLinks> 
-           </NavItem>
-           <NavItem>
-             <NavLinks to="../Pages/RestaurantList">Create Review</NavLinks> 
-           </NavItem>
-
-         </NavMenu>
-         <NavBtnLink to="../Pages/CreateUser">Sign in</NavBtnLink>
-       </NavbarContainer>
-      </Nav>
-    </>
-  );
-};
-
-export default Navbar;
-*/
 import React from 'react';
 import {
   Nav,
@@ -41,10 +8,10 @@ import {
   NavBtnLink
 } from './NavbarElements';
 import './styles.css';
+import CreateUser from "../Pages/CreateUser";
+
 const Navbar = () => {
   return (
-    <>
-     
       <Nav>
       <NavLink to='/' className="logo">
         <h2 style={{color:'white'}}>NOOBS</h2>
@@ -61,14 +28,12 @@ const Navbar = () => {
           <NavLink to='/contact' activeStyle>
            Contact Us
           </NavLink>
-          {/* Second Nav */}
-          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+          {/* <NavLink to='/CreateUser' activeStyle>Sign In</NavLink> */}
         </NavMenu>
         <NavBtn>
           <NavBtnLink to='/CreateUser'>Sign In</NavBtnLink>
         </NavBtn>
       </Nav>
-    </>
   );
 };
 

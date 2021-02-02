@@ -1,14 +1,14 @@
-import React, { ReactDOM, Component } from "react";
+import React, { ReactDOM, Component, Text } from "react";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from "../App.js"
 import { Card, Icon, Image } from 'semantic-ui-react'
+
 
 export default class CreateUser extends Component {
     render() {
         return (
-            //<Router>
+            // <Router>
             // <nav className="navbar navbar bg-dark navbar-expand-lg">
             <Card>
                 <form>
@@ -37,7 +37,7 @@ export default class CreateUser extends Component {
                 </Card.Content>
             </Card>
         );
-        {/* </nav> */ }
-        {/* </Router> */ }
+            {/* <Text>Pattnaik bsdka</Text> */}
+            {/* </Router> */}
     }
 }
