@@ -8,6 +8,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { loadUser } from "./actions/authActions";
 import { Component } from "react";
+import RestaurantList from "./components/RestaurantList";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 class App extends Component {
   componentDidMount() {
     store.dispatch(loadUser());
@@ -16,11 +18,14 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <AppNavbar />
-          <Container>
-            <ItemModal />
-            <ShoppingList />
-          </Container>
+          <Router>
+            {/* <Navbar />
+            <Route path="/" exact component={Home} /> */}
+            {/* <Route path="/CreateRestaurant" component={CreateRestaurant} />
+            <Route path="/RestaurantList" component={RestaurantList} />
+            <Route path="/CreateUser" component={CreateUser} /> */}
+            <Route path="/ViewRestaurants" component={RestaurantList} />
+          </Router>
         </div>
       </Provider>
     );

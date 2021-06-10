@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { connect } from "react-redux";
 import { getItems, deleteItem } from "../actions/itemActions";
 import PropTypes from "prop-types";
+
 class ShoppingList extends Component {
   static propTypes = {
     getItems: PropTypes.func.isRequired,

@@ -1,0 +1,15 @@
+1. Blog
+  a. Name
+  b. Date : (today's)
+  c. Title
+  d. Content
+  e. Image
+  f. Like
+
+2. Restaurants
+  a. Reviews -> route
+
+made:
+  blogActions, restaurantActions,
+  blogReducer, restaurantReducer
+  /client/.../reducers/index.js updated

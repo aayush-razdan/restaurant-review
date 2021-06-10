@@ -13,16 +13,18 @@ const RestaurantSchema = new Schema({
     required: true,
   },
   description: { type: String, required: true },
-  city: { type: mongoose.Schema.Types.ObjectId, ref: "city" },
+  city: { type: String, required: true },
   contact: { type: String, required: true },
   date: {
     type: Date,
     default: Date.now,
   },
-  user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
-  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "review" }],
+  // user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
+  // reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "review" }],
 });
 
 const Restaurant = mongoose.model("restaurant", RestaurantSchema);
 
 module.exports = Restaurant;
+
+// photo, name, address, decription, average rating
