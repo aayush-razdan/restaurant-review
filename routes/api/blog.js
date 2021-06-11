@@ -5,21 +5,21 @@ const auth = require("../../middleware/auth");
 router.get("/", (req, res) => {
   Blog.find()
     .sort({ date: -1 })
-    .then((items) => res.json(items))
+    .then((blogs) => res.json(blogs))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
 router.post("/", auth, (req, res) => {
-  const newItem = new Item({
+  const newBlog = new Blog({
     name: req.body.name,
     title: req.body.title,
     image: req.body.image,
     body: req.body.body,
   });
 
-  newItem
+  newBlog
     .save()
-    .then((item) => res.json(item))
+    .then((blog) => res.json(blog))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 

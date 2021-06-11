@@ -8,7 +8,7 @@ const BlogSchema = new Schema({
     type: String,
     required: true,
   },
-  user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
+  //user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
   title: {
     type: String,
     required: true,
@@ -21,10 +21,10 @@ const BlogSchema = new Schema({
     type: String,
     required: true,
   },
-  likes: {
-    type: Number,
-    default: 0,
-  },
+  // likes: {
+  //   type: Number,
+  //   default: 0,
+  // },
   date: {
     type: Date,
     default: Date.now,

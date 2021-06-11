@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import Select from "react-select";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import clsx from "clsx";
 
@@ -19,8 +18,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 import "../stylesheets/RestaurantList.css";
-import { getCities } from "../actions/cityActions";
-import { getRestaurants } from "../actions/restaurantActions";
+//import { getCities } from "../actions/cityActions";
+import { getBlogs } from "../actions/blogActions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Restaurant = (props) => {
+const Blog = (props) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -59,7 +58,7 @@ const Restaurant = (props) => {
       <div className="thumbnail">
         <img src="" />
         <div className="caption">
-          <h4>{props.restaurant.name}</h4>
+          <h4>{props.blog.title}</h4>
         </div>
         <Card className={classes.root}>
           <CardHeader
@@ -79,7 +78,7 @@ const Restaurant = (props) => {
             to={"/view/" + props.restaurant._id}
             className="btn btn-primary"
           > */}
-          {props.restaurant.description}
+          {props.blog.body}
           {/* </Link> */}
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
@@ -104,72 +103,46 @@ const Restaurant = (props) => {
     </div>
   );
 };
-class RestaurantList extends Component {
-  constructor(props) {
-    super(props);
-    this.onChangeCity = this.onChangeCity.bind(this);
-    //this.onSubmit = this.onSubmit.bind(this);
-    //this.restaurantList = this.restaurantList.bind(this);
+class BlogList extends Component {
+  // constructor(props) {
+  //   super(props);
+  // this.onChangeCity = this.onChangeCity.bind(this);
+  // this.onSubmit = this.onSubmit.bind(this);
+  //this.restaurantList = this.restaurantList.bind(this);
 
-    this.state = {
-      localcity: "All",
-      //cities1: [],
-      // restaurants: [],
-      // restaurants1: [],
-    };
-  }
+  //   this.state = {
+  //     localcity: "All",
+  //     //cities1: [],
+  //     restaurants: [],
+  //     restaurants1: [],
+  //   };
+  // }
 
   static propTypes = {
-    getRestaurants: PropTypes.func.isRequired,
-    getCities: PropTypes.func.isRequired,
-    restaurant: PropTypes.object.isRequired,
-    city: PropTypes.object.isRequired,
+    getBlogs: PropTypes.func.isRequired,
+    //getCities: PropTypes.func.isRequired,
+    blog: PropTypes.object.isRequired,
+    //city: PropTypes.object.isRequired,
   };
 
   componentDidMount() {
-    this.props.getCities();
-    this.props.getRestaurants();
+    this.props.getBlogs();
+    //this.props.getRestaurants();
 
-    //this.setState({ restaurants: this.props.restaurant.restaurants });
-
-    //this.setState({ localcity: this.props.city.cities[0].name });
+    //this.setState({ blogs: this.props.blog.blogs });
   }
-  // componentDidUpdate() {
-  //   this.setState({ restaurants: this.props.restaurant.restaurants });
+
+  // onChangeCity(e) {
+  //   this.setState({
+  //     localcity: e.target.value,
+  //   });
   // }
-  onChangeCity(e) {
-    this.setState({
-      localcity: e.target.value,
+
+  blogList() {
+    return this.props.blog.blogs.map((currentblog) => {
+      return <Blog blog={currentblog} key={currentblog._id} />;
     });
   }
-
-  restaurantList() {
-    if (this.state.localcity === "All") {
-      return this.props.restaurant.restaurants.map((currentrestaurant) => {
-        return (
-          <Restaurant
-            restaurant={currentrestaurant}
-            key={currentrestaurant._id}
-          />
-        );
-      });
-    } else {
-      return this.props.restaurant.restaurants
-        .filter((rt) => rt.city === this.state.localcity)
-        .map((currentrestaurant) => {
-          return (
-            <Restaurant
-              restaurant={currentrestaurant}
-              key={currentrestaurant._id}
-            />
-          );
-        });
-    }
-  }
-
-  // restaurantList() {
-  //   //return {this.props.restaurant.restaurants.filter((rt))}
-  // }
 
   // onSubmit(e) {
   //   e.preventDefault();
@@ -221,34 +194,10 @@ class RestaurantList extends Component {
 
           <div className="form-group">
             <input type="submit" value="Search" className="btn btn-primary" />
-          </div> 
+          </div>
         </form> */}
-        <div>
-          {/* <Select
-            options={this.props.city.cities}
-            onChange={this.onChangeCity}
-          /> */}
-          <select
-            //ref="userInput"
-            required
-            className="form-control"
-            value={this.state.localcity}
-            onChange={this.onChangeCity}
-          >
-            <option key={0} value={"All"}>
-              All
-            </option>
-            {this.props.city.cities.map(({ _id, name }) => {
-              return (
-                <option key={_id} value={name}>
-                  {name}
-                </option>
-              );
-            })}
-          </select>
-        </div>
         <div className="row text-center" id="thumbdiv">
-          {this.restaurantList()}
+          {this.blogList()}
         </div>
       </div>
     );
@@ -256,11 +205,12 @@ class RestaurantList extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  restaurant: state.restaurant,
+  blog: state.blog,
   // isAuthenticated: state.auth.isAuthenticated,
-  city: state.city,
+  //city: state.city,
 });
 
-export default connect(mapStateToProps, { getRestaurants, getCities })(
-  RestaurantList
-);
+export default connect(mapStateToProps, {
+  getBlogs,
+  //getCities
+})(BlogList);

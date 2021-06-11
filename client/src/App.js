@@ -9,7 +9,9 @@ import store from "./store";
 import { loadUser } from "./actions/authActions";
 import { Component } from "react";
 import RestaurantList from "./components/RestaurantList";
+import BlogCombine from "./components/BlogCombine";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import ItemCombine from "./components/ItemCombine";
 class App extends Component {
   componentDidMount() {
     store.dispatch(loadUser());
@@ -24,7 +26,10 @@ class App extends Component {
             {/* <Route path="/CreateRestaurant" component={CreateRestaurant} />
             <Route path="/RestaurantList" component={RestaurantList} />
             <Route path="/CreateUser" component={CreateUser} /> */}
+            <AppNavbar />
+            <Route path="/ShoppingList" component={ItemCombine} />
             <Route path="/ViewRestaurants" component={RestaurantList} />
+            <Route path="/ViewBlogs" component={BlogCombine} />
           </Router>
         </div>
       </Provider>
