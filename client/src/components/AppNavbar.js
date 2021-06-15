@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+
 import {
   Collapse,
   Navbar,
@@ -9,7 +10,6 @@ import {
   Container,
   NavLink,
 } from "reactstrap";
-
 import RegisterModal from "./auth/RegisterModal";
 import Logout from "./auth/Logout";
 import LoginModal from "./auth/LoginModal";
@@ -59,9 +59,18 @@ class AppNavbar extends Component {
     );
 
     return (
-      <div>
-        <Navbar color="dark" dark expand="sm" className="mb-5">
-          <Container>
+      <>
+        <Navbar
+          style={{
+            flexDirection: "column",
+            backgroundColor: "#00FF00	",
+            height: 65,
+          }}
+          dark
+          expand="sm"
+          className="mb-0"
+        >
+          <Container style={{ justifyContent: "space-between" }}>
             <NavbarBrand href="/">ShoppingList</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
@@ -71,10 +80,19 @@ class AppNavbar extends Component {
             </Collapse>
           </Container>
         </Navbar>
-      </div>
+        <div style={container}></div>
+      </>
     );
   }
 }
+const container = {
+  backgroundImage: `url("https://hintwallaper.com/wp-content/uploads/2020/11/Food-Wallpaper-HD-Download.jpg")`,
+  backgroundPosition: "center",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  width: "100vw",
+  height: "95vh",
+};
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
